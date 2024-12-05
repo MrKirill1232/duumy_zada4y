@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>Титульна сторінка</title>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
+    <style>
+        .navLink:visited
+        {
+            color: mediumslateblue;
+            text-decoration: none;
+        }
+        .navLink
+        {
+            color: steelblue;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body style="padding-top: 50px; background-color: aliceblue">
+    <script>
+        let navTable;
+
+        document.addEventListener("DOMContentLoaded", function()
+        {
+            navTable = document.getElementById("NAV_TABLE");
+            for (let index = 1; index <= 4; index++)
+            {
+                const hrefElement = document.getElementById("navUrl0" + index);
+                hrefElement.addEventListener("mouseover", () => onMouseHover(hrefElement));
+                hrefElement.addEventListener("mouseout", () => onMouseOut(hrefElement));
+            }
+        });
+
+        function onMouseHover(element)
+        {
+            element.style.backgroundColor = navTable.style.borderColor;
+        }
+
+        function onMouseOut(element)
+        {
+            element.style.backgroundColor = navTable.style.backgroundColor;
+        }
+    </script>
+    <header>
+        <nav style="
+            position: fixed;
+            top: 0;
+            width: 100%;
+            margin-bottom: 15px;
+            z-index: 1000;
+            font-family: 'Century Gothic', serif;
+        ">
+            <table id="NAV_TABLE" style="
+                font-size: 24px;
+                width: 98.8%;
+                border: 3px solid lightcyan;
+                background-color: skyblue;
+            ">
+                <tbody>
+                <tr>
+                    <td style="width: 24.7%; max-width: 24.7%; text-align: center;">
+                        <a class="navLink" id="navUrl01" href="./page01.html">Головна сторінка</a>
+                    </td>
+                    <td style="width: 24.7%; max-width: 24.7%; text-align: center;">
+                        <a class="navLink" id="navUrl02" href="./page02.html">Сторінка з теоріює</a>
+                    </td>
+                    <td style="width: 24.7%; max-width: 24.7%; text-align: center;">
+                        <a class="navLink" id="navUrl03" href="./page03.html">Приклади розв'язання задач</a>
+                    </td>
+                    <td style="width: 24.7%; max-width: 24.7%; text-align: center;">
+                        <a class="navLink" id="navUrl04" href="./page04.html">Сторінка з контрольною роботою</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </nav>
+    </header>
+    <div style="text-align: center;" >
+        <p style="font-size: 24px">
+            Відомості для опрацювання теми:
+            <br>
+            <strong>"Неінерціальні системи відліку. Сила інерції"</strong>
+        </p>
+    </div>
+    <div id="annotation" style="text-align: center;" >
+        <header style="font-size: 24px">
+            <strong><u>Анотація:</u></strong>
+        </header>
+        <table style="width: 98.8%; font-size: 17px"><tbody><tr>
+            <td style="width: 60.8%;"></td>
+            <td style="text-align: left">
+                <i>
+                    В ході вивчення тем, заявлених у шапці документа,&nbsp;
+                    від учінів вимагається вислухати загальні положення теми "Неінерціальні системи відліку",&nbsp;
+                    вивчити поняття "Сила інерції", "Відцентрова сила інерції", "Сила Каріоліса" та "Штучне тяжіння".&nbsp;
+                    В ході навчнання, разом з учнями, роз'язати задачи для тренування та обговорити отримані результати.
+                    <br>
+                    Форма контролю для перевірки знань учнів - контрольна робота.
+                </i>
+            </td>
+        </tr></tbody></table>
+    </div>
+    <div style="text-align: center;">
+        <img src="../assets/top_picture/top_picture_cmp.png" usemap="#image-map" alt="Карта з інформацією">
+        <map name="image-map">
+            <area target="_blank" alt="інформація в нормативних документах МОН" title="інформація в нормативних документах МОН" href="https://mon.gov.ua/storage/app/media/zagalna%20serednya/programy-10-11-klas/2018-2019/fizika-10-11-avtorskij-kolektiv-pid-kerivnicztvom-lokteva-vm.pdf" coords="1199,338,599,1" shape="rect">
+            <area target="" alt="інфо" title="інфо" href="#AUTHOR_INFO" coords="601,338,1199,599" shape="rect">
+            <area target="_blank" alt="Теорветичні відомості" title="Теорветичні відомості" href="./page02.html" coords="425,173,174" shape="circle">
+            <area target="_blank" alt="Контрольна робота" title="Контрольна робота" href="./page04.html" coords="334,338,1,1,1,340" shape="poly">
+            <area target="_blank" alt="Приклади виконання задач" title="Приклади виконання задач" href="./page03.html" coords="2,341,338,339,593,596,2,599" shape="poly">
+        </map>
+    </div>
+    <div style="text-align: center;" >
+        <header style="font-size: 24px">
+            <strong><u>План опрацювання:</u></strong>
+        </header>
+        <div style="margin-left: 39%; margin-right: 40.5%; text-align: left; font-size: 17px; font-family: 'Comic Sans MS', serif; background-image: url('../assets/background.png');">
+            <ol type="1">
+                <li>Головна сторінка:</li>
+                <ul>
+                    <li><a class="bookmark" href="#annotation">Анотація;</a></li>
+                    <li><a class="bookmark" href="#AUTHOR_INFO">Відомості про автора;</a></li>
+                </ul>
+                <li><a class="bookmark" href="./page02.html">Теоретичні відомості:</a></li>
+                <ul>
+                    <li><a class="bookmark" href="page02.html#non_inertial_systems">Неінерціальні системи відліку;</a></li>
+                    <li><a class="bookmark" href="page02.html#inertial_power">Сила інерції;</a></li>
+                    <li><a class="bookmark" href="page02.html#centrifugal_force">Відцентрова сила інерції;</a></li>
+                    <li><a class="bookmark" href="page02.html#coriolis_force">Сила Коріоліса;</a></li>
+                    <li><a class="bookmark" href="page02.html#artificial_gravity">Штучне тяжіння;</a></li>
+                </ul>
+                <li><a class="bookmark" href="page03.html">Розв'язок задач:</a></li>
+                <ul>
+                    <li><a class="bookmark" href="page03.html#example01">Задача 01. Знайти час, за який тіло спуститься по похилій площині.</a></li>
+                    <li><a class="bookmark" href="page03.html#example02">Задача 02. Знайти прискорення точок осі цилінда.</a></li>
+                </ul>
+                <li><a class="bookmark" href="page04.html#check_knowledge">Контрольна робота;</a></li>
+            </ol>
+        </div>
+    </div>
+    <footer>
+        <div id="AUTHOR_INFO">
+            <header style="text-align: center; font-size: 24px">
+                <strong><u>Відомості про автора:</u></strong>
+            </header>
+            <div style="
+                margin-left: 70%;
+                text-align: left;
+            ">
+                <em>Автор презентації</em>: Бутолін Кирило Дмитрович
+                <br>
+                <em>Джерело інформації</em>:
+                    <a href="https://pidruchnyk.com.ua/1175-fizyka-10-klas-zasekina-prof.html">
+                        [Фізика 10 клас | Профільний Рівень] - Засєкіна Тетяна Миколаївна
+                    </a>
+                <br>
+                <mark>Contact e-mail</mark>: <strong>my_unique_e_mail_for_contact</strong>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

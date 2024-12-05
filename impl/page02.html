@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>Теоретичні відомості</title>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
+    <style>
+        .vector
+        {
+            margin-left: -13px;
+        }
+        .vector:before
+        {
+            content: "→";
+            position: relative;
+            top: -11px;
+            left: 15px;
+        }
+        body
+        {
+            background-image: url('../assets/background.png');
+            background-repeat: repeat;
+        }
+
+        .navLink:visited
+        {
+            color: mediumslateblue;
+            text-decoration: none;
+        }
+        .navLink
+        {
+            color: steelblue;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body style="padding-top: 50px">
+<script>
+    let navTable;
+
+    document.addEventListener("DOMContentLoaded", function()
+    {
+        navTable = document.getElementById("NAV_TABLE");
+        for (let index = 1; index <= 4; index++)
+        {
+            const hrefElement = document.getElementById("navUrl0" + index);
+            hrefElement.addEventListener("mouseover", () => onMouseHover(hrefElement));
+            hrefElement.addEventListener("mouseout", () => onMouseOut(hrefElement));
+        }
+    });
+
+    function onMouseHover(element)
+    {
+        element.style.backgroundColor = navTable.style.borderColor;
+    }
+
+    function onMouseOut(element)
+    {
+        element.style.backgroundColor = navTable.style.backgroundColor;
+    }
+</script>
+<header>
+    <nav style="
+            position: fixed;
+            top: 0;
+            width: 100%;
+            margin-bottom: 15px;
+            z-index: 1000;
+            font-family: 'Century Gothic', serif;
+        ">
+        <table id="NAV_TABLE" style="
+                font-size: 24px;
+                width: 98.8%;
+                border: 3px solid lightcyan;
+                background-color: skyblue;
+            ">
+            <tbody>
+            <tr>
+                <td style="width: 24.7%; max-width: 24.7%; text-align: center;">
+                    <a class="navLink" id="navUrl01" href="./page01.html">Головна сторінка</a>
+                </td>
+                <td style="width: 24.7%; max-width: 24.7%; text-align: center;">
+                    <a class="navLink" id="navUrl02" href="./page02.html">Сторінка з теоріює</a>
+                </td>
+                <td style="width: 24.7%; max-width: 24.7%; text-align: center;">
+                    <a class="navLink" id="navUrl03" href="./page03.html">Приклади розв'язання задач</a>
+                </td>
+                <td style="width: 24.7%; max-width: 24.7%; text-align: center;">
+                    <a class="navLink" id="navUrl04" href="./page04.html">Сторінка з контрольною роботою</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </nav>
+</header>
+<!-- padding top required for make a distance from nav and first line of content, because nav is cover some part of it -->
+<div style="text-align: center; font-family: 'Arial', serif;" >
+    <p style="font-size: 24px">
+        Теоретичні відомості з теми:
+        <br>
+        <strong>"Неінерціальні системи відліку. Сила інерції"</strong>
+    </p>
+</div>
+
+<article id="header" style="font-size: 20px">
+    <section>
+        <ol type="1">
+            <li><a class="bookmark" href="./page01.html">Головна сторінка:</a></li>
+            <ul>
+                <li><a class="bookmark" href="./page01.html#annotation">Анотація;</a></li>
+                <li><a class="bookmark" href="./page01.html#AUTHOR_INFO">Відомості про автора;</a></li>
+            </ul>
+            <li>Теоретичні відомості:</li>
+            <ul>
+                <li><a class="bookmark" href="#non_inertial_systems">Неінерціальні системи відліку;</a></li>
+                <li><a class="bookmark" href="#inertial_power">Сила інерції;</a></li>
+                <li><a class="bookmark" href="#centrifugal_force">Відцентрова сила інерції;</a></li>
+                <li><a class="bookmark" href="#coriolis_force">Сила Коріоліса;</a></li>
+                <li><a class="bookmark" href="#artificial_gravity">Штучне тяжіння;</a></li>
+            </ul>
+            <li><a class="bookmark" href="page03.html">Розв'язок задач:</a></li>
+            <ul>
+                <li><a class="bookmark" href="page03.html#example01">Задача 01. Знайти час, за який тіло спуститься по похилій площині.</a></li>
+                <li><a class="bookmark" href="page03.html#example02">Задача 02. Знайти прискорення точок осі цилінда.</a></li>
+            </ul>
+            <li><a class="bookmark" href="page04.html#check_knowledge">Контрольна робота;</a></li>
+        </ol>
+    </section>
+</article>
+<article id="inertial_power">
+    <h1>Сила інерції</h1>
+    <section style="font-size: 20px;">
+        <p style="text-indent: 20px">
+            <u><strong>Сила інерції</strong></u> - представляє собою важливий аспект в розумінні руху тіл в неінерціальних системах відліку.&nbsp;
+            Вона є фіктивною силою, яка виникає у зв'язку з прискореним рухом самої системи відліку.&nbsp;
+            Основні риси сил інерції включають напрямлення проти прискорення системи відліку та важливий вплив на динамічні характеристики руху.&nbsp;
+            Сила інерції зумовлена не взаємодією тіл, а прискореним рухом самої&nbsp;
+            системи відліку відносно інерціальної системи відліку. Сили інерції напрямлені&nbsp;
+            завжди протилежно до прискорення руху самої системи відліку.
+        <p style="text-indent: 20px">
+            Сила інерції може бути виражена наступною формулою:
+            <br>
+            <center style="font-weight: 700; font-size: 24px;">F<sub>ін</sub> = -m * a</center>
+            <br>
+            в якій елементи:
+            <ul style="margin-top: 0">
+                <li><u>F<sub>ін</sub></u> - сила інерції;</li>
+                <li><u>m</u> - маса тіла;</li>
+                <li><u>a</u> - прискорення системи відліку;</li>
+            </ul>
+        <p style="text-indent: 20px; margin-top: 0; margin-bottom: 0">
+            Однією з ключових характеристик сил інерції є те,&nbsp;
+            що вони виникають внаслідок прискорення чи обертання самої системи відліку.&nbsp;
+            У випадках, коли система зазнає прискорення, сила інерції напрямлена протилежно до цього прискорення.&nbsp;
+            Це приводить до виникнення фіктивних сил, які можуть бути використані для пояснення руху тіл у неінерціальних умовах.
+        <p style="text-indent: 20px; margin-top: 0; margin-bottom: 0">
+            Сила інерції прикладена до тіла, але неможливо вказати тіло, з яким&nbsp;
+            відбувається взаємодія, тому для сили інерції третій закон Ньютона на може бути&nbsp;
+            застосований.
+        <p style="text-indent: 20px; margin-top: 0; margin-bottom: 0">
+            За властивостями сила інерції схожа на силу земного тяжіння. Під дією сили&nbsp;
+            тяжіння всі тіла рухаються з однаковим прискоренням, тобто F<sub>тер</sub> ~ m. Сили інерції&nbsp;
+            надають тілам також відповідного прискорення, з яким рухається Неінваритативна Система Відліку, тобто&nbsp;
+            F<sub>ін</sub> ~ m (еквівалентність сил інерціїі гравітаційних сил покладена Ейнштейном в основу загальної теорії відносності).
+        <p style="text-indent: 20px; margin-top: 0; margin-bottom: 0">
+            Таким чином, властивості сил інерції такі:
+            <ol type="a" style="margin-top: 0; margin-bottom: 0; margin-left: 20px">
+                <li>
+                    вони неінваріантні відносно переходу з однієї неінерціальної системи відліку в іншу;
+                </li>
+                <li>
+                    вони не підпорядковуються третьому закону Ньютона;
+                </li>
+                <li>
+                    вони є зовнішніми силами відносно рухомого тіла;
+                </li>
+                <li>
+                    вони пропорційні масі тіла;
+                </li>
+                <li>
+                    рух тіла під дією сил інерціїаналогічнийрухові у гравітаційному полі.
+                </li>
+            </ol>
+    </section>
+</article>
+<article id="non_inertial_systems">
+    <h1>Неінерціальна система відліку</h1>
+    <section style="font-size: 20px;">
+        <p style="text-indent: 20px">
+        <u><strong>Неінерціальна система відліку</strong></u> - це система, яка зазнає прискорення або обертання,&nbsp;
+            і тому для опису руху в ній не може використовуватися закон інерції (закон Ньютона),&nbsp;
+            який стверджує, що тіло, на яке не діють зовнішні сили,&nbsp;
+            залишається у стані спокою або рухається прямолінійно з постійною швидкістю.
+        <p style="text-indent: 20px">
+        На неінерціальну систему не повинні обов'язково діяти сили, бо однією з причин прискорення тіл,&nbsp;
+            є прискорений рух чи обертання самої системи відліку, що обов'язково потрібно враховувати при розв'язуванні задач.&nbsp;
+            Одним з прикладів неінерціальних систем відліку - це система, що обертається навколо осі (як обертання Землі).
+        <p style="text-indent: 20px">
+        Для визначення сили інерції в Неінерціальних системах відліку, спочатку необіхдно знайти силу всіх векторів сил,&nbsp;
+            які діють на тіло в "нерухомій" інерціальній системі відліку. Сили інерції будуть дорівнювати цій сумі, взятій з протилежним знаком.
+    </section>
+    <br>
+    <h2>Система відліку в якій кулька висить на нитці</h2>
+    <section style="font-size: 20px;">
+        <table style="border: 3px solid darkcyan; background-color: #f1f1">
+            <caption>
+                Прикладом демонстріції, як у неінерціальній системі відліку виникає сила інерції,&nbsp;
+                є кулька, що висить на нитці, у вагоні потяга, який набирає швидкість&nbsp;
+                та рухається з прискорення <span class="vector">a</span>
+            </caption>
+            <thead>
+            <tr>
+                <th style="border-bottom: 3px solid darkcyan; scale: 100.5%" colspan="2">
+                    Система відліку розглядається:
+                </th>
+            </tr>
+            <tr>
+                <th style="border-bottom: 3px solid darkcyan; scale: 100.5%">
+                    Відносно Землі (K)
+                </th>
+                <th style="border-bottom: 3px solid darkcyan; scale: 100.5%">
+                    Відносно вагона потяга (K')
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td style="width: 50%; padding: 5px; border: 1px solid gray;">
+                    <p style="text-indent: 20px">
+                        Якщо розглядати рух відносно <strong>Землі</strong> (К), то кулька має те саме прискоренні, як і потяг.&nbsp;
+                        У цьому випадку прискорення спричинено <mark>рівнодійною сили</mark> <span class="vector">F</span>&nbsp;
+                        з <mark>Сили Тяжіння</mark> m<span class="vector" style="margin-left: -20px;">g</span>&nbsp;
+                        та <mark>Натягу Нитки</mark> <span class="vector">T</span>.&nbsp;
+                        У такому випадку <U>Другий Закон Ньоютона</U> матиме наступний вигляд –
+                        <span style="font-weight: 700"><span class="vector">F</span> = m<span class="vector" style="margin-left: -20px;">a</span></span>.&nbsp;
+                        Так як система відліку розглядається як уже з набутим прискоренням від середовища - то ця система є "Інерціальною".
+                </td>
+                <td style="width: 50%; padding: 5px; border: 1px solid gray;">
+                    <p style="text-indent: 20px">
+                        Якщо розглядати рух відносно <b>вагону потяга</b> (К'), то кулька знаходиться в стані спокою, навідміну від потяга.&nbsp;
+                        У цьому випадку <mark>рівнодійна сил</mark> <span class="vector">F</span>&nbsp;
+                        має бути скомпенсована іншою силою - <mark>силою інреції</mark> <span class="vector">F<sub>ін</sub></span>.&nbsp;
+                        Результуєче рівняння буде включати в себе <mark>реальні сили, які діють на тіло</mark>, а також силу інерції.&nbsp;
+                        Знаючи це, Другий Закон Ньоюта можна записати наступним чином -
+                        <span style="font-weight: 700"><span class="vector">F</span> + <span class="vector">F<sub>ін</sub></span> = 0</span>.&nbsp;
+                        Так як система відліку розглядається як в стані спокою, урівноваженою силою інерції - то ця система є "Неінерціальною".
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td style="width: 50%; padding: 5px; border: 1px solid gray;">
+                    <article>
+                        <figure style="text-align: center;">
+                            <img style="height: 40%; width: 40%;" src="../assets/inertial_sprites/inertial.png" alt="Рис, на якому показана дія сил Тяжіння Землі (mg(g - вектор)), сила натягу нитки (T(вектор)) та напрям результуючої сили (F(вектор)), які прикладені до кульки">
+                            <figcaption>Рис 01. Відображення сил, які прикладені до кульки в системі відліку відносно Землі (K)</figcaption>
+                        </figure>
+                    </article>
+                </td>
+                <td style="width: 50%; padding: 5px; border: 1px solid gray;">
+                    <article>
+                        <table style="width: 98.8%; text-align: center;">
+                            <tbody><tr><td>
+                                <img style="height: 40%; width: 40%;" src="../assets/inertial_sprites/noninertial.png" alt="Рис, на якому показана дія сил Тяжіння Землі (mg(g - вектор)), сила натягу нитки (T(вектор)), напрям результуючої сили (F(вектор)), та напрям сили інерції (F_ін(вектор)), які прикладені до кульки">
+                            </td></tr></tbody>
+                            <tfoot><tr><td>
+                                Рис 02. Відображення сил, які прикладені до кульки в системі відліку відносно Вагону Потяга (K')
+                            </td></tr></tfoot>
+                        </table>
+                    </article>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </section>
+</article>
+    <br>
+    <br>
+<article id="centrifugal_force">
+    <h2>Відцентрова сила інерції</h2>
+    <section style="font-size: 20px;">
+        <p style="text-indent: 20px">
+            <mark><strong>Відцентрова сила інерції</strong></mark> - як і будь-яка сила інерції,&nbsp;
+            існує лише в неінерціальнійсистемі відліку&nbsp;
+            і зникає з переходом в інерціальну (тобто є неінваріантною величиною).
+        <p style="text-indent: 20px">
+            Опис руху в неінерціальних системах відліку,&nbsp;
+            що обертаються з постійною кутовою швидкістю.&nbsp;
+            Розглянемо рух тіла в неінерціальній системі відліку K',&nbsp;
+            що обертається відносно інерціальної системи відліку K з постійною кутовою швидкістю.&nbsp;
+        <br>
+        <article>
+        <table style="border: 3px solid darkcyan; background-color: #a9a9">
+            <caption>
+                Прикладом такого руху може бути рух кульки, що закріплена на одному з кінців пружини,&nbsp;
+                а другим кінцем пружина кріпиться до осі диска, який може обертатись.&nbsp;Якщо диск не обертається — пружина не деформована.
+            </caption>
+            <thead>
+            <tr>
+                <th style="border-bottom: 3px solid darkcyan; scale: 100.5%" colspan="2">
+                    Система відліку розглядається:
+                </th>
+            </tr>
+            <tr>
+                <th style="border-bottom: 3px solid darkcyan; scale: 100.5%">
+                    Відносно Землі (K)
+                </th>
+                <th style="border-bottom: 3px solid darkcyan; scale: 100.5%">
+                    Відносно диска (K')
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td style="width: 50%; padding: 5px; border: 1px solid gray;">
+                    <p style="text-indent: 20px; margin-top: 0; margin-bottom: 0">
+                        Під час розкручування диска кулька розтягує пружину доти,&nbsp;
+                        поки сила пружності не набуває значення&nbsp;
+                        <span style="font-weight: 700">F<sub>пр</sub> = ma = mω<sup>2</sup>R</span>.
+                    <p style="text-indent: 20px; margin-top: 0; margin-bottom: 0">
+                        З умовою, що система відліку розглядається <mark>відносно Землі</mark> (K) -&nbsp;
+                    <mark>кулька рухається по колу з доцентровим прискоренням, яке надає йому сила пружності</mark>.
+                </td>
+                <td style="width: 50%; padding: 5px; border: 1px solid gray;">
+                    <p style="text-indent: 20px; margin-top: 0; margin-bottom: 0">
+                        За умови, що система відліку розглядається <mark>відносно диску</mark> (K') -&nbsp;
+                        <mark>кулька нерухома, що врівноважується силою інерції</mark>
+                        <span class="vector">F<sub>в.ц.</sub></span>&nbsp;
+                        яка напрямлена вздовж радіуса диска від осі його обертання.
+                    <p style="text-indent: 20px; margin-top: 0; margin-bottom: 0">
+                        В цьому випадку, формулу можна виразити наступним чином -&nbsp;
+                        <span style="font-weight: 700">F<sub>пр</sub> + <span class="vector">F<sub>в.ц.</sub></span> = 0</span>.
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="2" style="width: 100%; padding: 5px; border: 1px solid gray;">
+                    <figure style="text-align: center;">
+                        <img style="height: 20%; width: 20%;" src="../assets/inertial_sprites/system_with_static_angle_speed.jpg" alt="Рис, на якому показана дія сил Сили Пружності, Відцентрова Сила та Сила Тяжіння які прикладені до кульки">
+                        <figcaption>Рис 03. Відображення сил, які прикладені до кульки в системі відліку з диском та пружиною</figcaption>
+                    </figure>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+        </article>
+    </section>
+</article>
+<article id="coriolis_force">
+    <h3>Сила Коріоліса</h3>
+    <section style="font-size: 20px;">
+        <p style="text-indent: 20px; margin-top: 0; margin-bottom: 0">
+        Окрім відцентровоїсили інерції, у неінерціальній системі відліку,&nbsp;
+            що обертається, існує ще й сила інерції Коріоліса.
+        <p style="text-indent: 20px; margin-top: 0; margin-bottom: 0">
+        Сила Коріоліса — це сила інерції, що діє в неінерціальній системі відліку,&nbsp;
+            яка обертається з кутовою швидкістю <span class="vector">ω</span> на тіло,&nbsp;
+            що рухається зі швидкістю <span class="vector">v</span>.
+        <p style="text-indent: 20px; margin-top: 0; margin-bottom: 0">
+        Сила Коріоліса перпендикулярна до вектора <span class="vector">ω</span>і діє у площині,&nbsp;
+            перпендикулярній до осі обертання системи, вона перпендикулярна до вектора швидкості руху тіла,&nbsp;
+            а отже, змінює тільки напрямок швидкості, не змінюючи її модуля.
+        <p style="text-indent: 20px; margin-top: 0; margin-bottom: 0">
+        Cила Коріоліса відхиляє на схід тіла, що вільно падають.&nbsp;
+            Це відхилення пропорційне косинусу широти місцезнаходження, отже,&nbsp;
+            воно максимальне на екваторі й дорівнює нулю на полюсах.&nbsp;
+            Так, у результаті падіння тіла на екваторі з висоти 30 м відхилення становить 3,6 мм.&nbsp;
+            Силу Коріоліса необхідно враховувати для точного наведення на ціль під час стрільби на далекі відстані.
+    </section>
+</article>
+<article id="artificial_gravity">
+    <h4>Штучне тяжіння</h4>
+    <section style="font-size: 20px;">
+        <p style="text-indent: 20px; margin-top: 0; margin-bottom: 0">
+            Ідея штучної гравітації ґрунтується на принципі еквівалентності&nbsp;
+            сили гравітаціїі сили інерції,&nbsp;
+            тобто: якщо інертна маса і гравітаційна маса рівні,&nbsp;
+            то неможливо відрізнити, яка сила діє на тіло — гравітаційна або сила інерції.&nbsp;
+            Іншими словами: якщо створити космічний корабель, що обертається навколо своєї осі,&nbsp;
+            відцентрова сила, що виникає при цьому, «виштовхуватиме» космонавта від центра обертання,&nbsp;
+            і він зможе запросто стояти на «підлозі». Що швидше обертатиметься корабель,&nbsp;
+            і що далі від центра буде перебувати космонавт, то сильнішою буде штучна гравітація.
+        <p style="text-indent: 20px; margin-top: 0; margin-bottom: 0">
+            Формула для знаходження сили "штучного тяжіння" буде наступною
+            <br>
+            <center>
+                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mstyle mathsize="40px">
+                        <mi>F</mi>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mrow>
+                                <mi>m</mi>
+                                <msup>
+                                    <mi>v</mi>
+                                    <mn>2</mn>
+                                </msup>
+                            </mrow>
+                            <mi>r</mi>
+                        </mfrac>
+                    </mstyle>
+                </math>
+            </center>
+            <br>
+            де,
+            <ul style="margin-top: 0; margin-bottom: 0">
+                <li>m – маса космонавта;</li>
+                <li>v – лінійна швидкість космонавта;</li>
+                <li>r – відстань від центра обертання (радіус).</li>
+            </ul>
+    </section>
+</article>
+</body>
+</html>

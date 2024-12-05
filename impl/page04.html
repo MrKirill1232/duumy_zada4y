@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>Контрольна робота</title>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
+    <style>
+        .bookmark:hover
+        {
+            color: brown;
+            background-color: darkgrey;
+            text-decoration: underline;
+        }
+        .bookmark:visited
+        {
+            color: mediumslateblue;
+        }
+        .bookmark
+        {
+            color: steelblue;
+        }
+
+
+        body
+        {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form
+        {
+            width: 50%;
+            margin: auto;
+        }
+
+        legend
+        {
+            font-weight: bold;
+            color: #007BFF;
+            border: 1px solid grey;
+        }
+
+        input[type="text"]
+        {
+            width: 300px;
+        }
+
+        input[type="text"][name="firstField"]
+        {
+            width: 150px;
+        }
+
+        input[type="submit"],
+        input[type="reset"]
+        {
+            background-color: #28A745;
+            color: #FFF;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"]
+        {
+            margin-right: 5px;
+        }
+
+        select
+        {
+            width: 150px;
+        }
+
+        textarea
+        {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+        }
+
+        .navLink:visited
+        {
+            color: mediumslateblue;
+            text-decoration: none;
+        }
+        .navLink
+        {
+            color: steelblue;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body style="padding-top: 50px; background-color: aliceblue">
+<script>
+    let navTable;
+
+    document.addEventListener("DOMContentLoaded", function()
+    {
+        navTable = document.getElementById("NAV_TABLE");
+        for (let index = 1; index <= 4; index++)
+        {
+            const hrefElement = document.getElementById("navUrl0" + index);
+            hrefElement.addEventListener("mouseover", () => onMouseHover(hrefElement));
+            hrefElement.addEventListener("mouseout", () => onMouseOut(hrefElement));
+        }
+    });
+
+    function onMouseHover(element)
+    {
+        element.style.backgroundColor = navTable.style.borderColor;
+    }
+
+    function onMouseOut(element)
+    {
+        element.style.backgroundColor = navTable.style.backgroundColor;
+    }
+
+    function completeAndRedirect()
+    {
+        const form = document.forms['check_knowledge'];
+        let sum = 0;
+        if (form.elements.task_01.value.length !== 0)
+        {
+            sum += (form.elements.task_01.value === '4') ? 1 : 0;
+            document.getElementById("textblock_01").innerHTML = "Правильна відповідь №04";
+        }
+        let task02 = [];
+        {
+            const checkBoxes = document.getElementsByName("task_02[]");
+            for (let index = 0; index < checkBoxes.length; index++)
+            {
+                if (checkBoxes[index].checked)
+                {
+                    task02.push(checkBoxes[index].value);
+                }
+            }
+        }
+        if (task02.length !== 0)
+        {
+            for (const check of task02)
+            {
+                console.log(check)
+                sum += (check === 'B' || check === 'D') ? 1 : (-0.25);
+            }
+            document.getElementById("textblock_02").innerHTML = "Правильні відповіді №02 та №04";
+        }
+        if (form.elements.task_03.value.length !== 0)
+        {
+            sum += (form.elements.task_03.value === '800') ? 1 : 0;
+            document.getElementById("textblock_03").innerHTML =
+                (form.elements.task_03.value === '0.8') ? "Задача була написати значення в мілісекундах. Правильна відповідь 800."
+                    : "Правильна відповідь 800.";
+        }
+        if (form.elements.task_04.value.length !== 0)
+        {
+            sum += (form.elements.task_04.value === '0') ? 1 : 0;
+            document.getElementById("textblock_04").innerHTML = "Правильна відповідь '0'.";
+        }
+        if (form.elements.task_05.value.length !== 0)
+        {
+            sum += (form.elements.task_05.value === '-') ? 1 : 0;
+            document.getElementById("textblock_05").innerHTML = "Правильна відповідь '-'.";
+        }
+        if (form.elements.task_06.value.length !== 0)
+        {
+            sum += (form.elements.task_06.value === '1') ? 1 : 0;
+            document.getElementById("textblock_06").innerHTML = "Правильна відповідь '800'.";
+        }
+        document.getElementById("point_textblock").innerHTML = "Ваш підсумковий бал - " + (sum < 0 ? 0 : sum) + ".";
+    }
+</script>
+<header>
+    <nav style="
+            position: fixed;
+            top: 0;
+            width: 100%;
+            margin-bottom: 15px;
+            z-index: 1000;
+            font-family: 'Century Gothic', serif;
+        ">
+        <table id="NAV_TABLE" style="
+                font-size: 24px;
+                width: 98.8%;
+                border: 3px solid lightcyan;
+                background-color: skyblue;
+            ">
+            <tbody>
+            <tr>
+                <td style="width: 24.7%; max-width: 24.7%; text-align: center;">
+                    <a class="navLink" id="navUrl01" href="./page01.html">Головна сторінка</a>
+                </td>
+                <td style="width: 24.7%; max-width: 24.7%; text-align: center;">
+                    <a class="navLink" id="navUrl02" href="./page02.html">Сторінка з теоріює</a>
+                </td>
+                <td style="width: 24.7%; max-width: 24.7%; text-align: center;">
+                    <a class="navLink" id="navUrl03" href="./page03.html">Приклади розв'язання задач</a>
+                </td>
+                <td style="width: 24.7%; max-width: 24.7%; text-align: center;">
+                    <a class="navLink" id="navUrl04" href="./page04.html">Сторінка з контрольною роботою</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </nav>
+</header>
+
+
+<article id="header" style="font-size: 20px">
+    <section>
+        <ol type="1">
+            <li><a class="bookmark" href="./page01.html">Головна сторінка:</a></li>
+            <ul>
+                <li><a class="bookmark" href="./page01.html#annotation">Анотація;</a></li>
+                <li><a class="bookmark" href="./page01.html#AUTHOR_INFO">Відомості про автора;</a></li>
+            </ul>
+            <li><a class="bookmark" href="./page02.html">Теоретичні відомості:</a></li>
+            <ul>
+                <li><a class="bookmark" href="page02.html#non_inertial_systems">Неінерціальні системи відліку;</a></li>
+                <li><a class="bookmark" href="page02.html#inertial_power">Сила інерції;</a></li>
+                <li><a class="bookmark" href="page02.html#centrifugal_force">Відцентрова сила інерції;</a></li>
+                <li><a class="bookmark" href="page02.html#coriolis_force">Сила Коріоліса;</a></li>
+                <li><a class="bookmark" href="page02.html#artificial_gravity">Штучне тяжіння;</a></li>
+            </ul>
+            <li><a class="bookmark" href="page03.html">Розв'язок задач:</a></li>
+            <ul>
+                <li><a class="bookmark" href="page03.html#example01">Задача 01. Знайти час, за який тіло спуститься по похилій площині.</a></li>
+                <li><a class="bookmark" href="page03.html#example02">Задача 02. Знайти прискорення точок осі цилінда.</a></li>
+            </ul>
+            <li><a class="bookmark" href="#check_knowledge">Контрольна робота;</a></li>
+        </ol>
+    </section>
+</article>
+<article>
+    <section>
+        <form id="check_knowledge" action="javascript:completeAndRedirect();" method="post">
+            <fieldset>
+                <legend>Питання 01. Оберіть правильне визначення терміна "Неінерціальна система відліку".</legend>
+                <label><br><input type="radio" name="task_01" value="1">це система відліку, у якій причиною виникнення прискорення є взаємодія тіл за межами системи, а не в самій системі відліку;</label>
+                <label><br><input type="radio" name="task_01" value="2">це система відліку, у якій нема причини виникнення прискорення системи відліку, а тіла в середині не мають урівноважуючої сили;</label>
+                <label><br><input type="radio" name="task_01" value="3">це система відліку, у якій прискорення завжди є постійним, та не залежить від спостереження відосно будь-якого об'єкта;</label>
+                <label><br><input type="radio" name="task_01" value="4">це система відліку, у якій причиною виникнення прискорення руху тіл є не лише взаємодія тіл, а й прискорений рух самої системи відліку;</label>
+                <div id="textblock_01" style="background-color: gold; color: black"></div>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Питання 02. Оберіть правильні, на вашу думку, твердження:</legend>
+                <label><br><input type="checkbox" name="task_02[]" value="A">Для "Неінерціальної системи відліку" не можна використовувати <u>Другий</u> Закон Ньоютона;</label>
+                <label><br><input type="checkbox" name="task_02[]" value="B">При використанні Закону Ньютона для "Неінерціальної система відліку", потрібно врахувати силу інерції;</label>
+                <label><br><input type="checkbox" name="task_02[]" value="C">Формули для Інерціальних Систем Відліку, та для Неінерціальних Систем Відліку, завжди будуть кардинально відрізнятись;</label>
+                <label><br><input type="checkbox" name="task_02[]" value="D">Сила, яка потрібна для урівноваження системи відліку, фіктивна;</label>
+                <label><br><input type="checkbox" name="task_02[]" value="E">Чи можна визначити силу інерції без використання законів Ньютона;</label>
+                <div id="textblock_02" style="background-color: gold; color: black"></div>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Питання 03. Задача. Тіло масою m, що знаходиться на вершині похилох площини, утримується силою тертя. За який час (t) тіло опуститься по похилій площині, якщо вона стане рухатись в горизонтальному напряму з прискорення = 1 м/с<sup>2</sup>. Довжина площини L = 1 м, кут нахилу до горизонту α = 30°, коефіціент тертя між тілом та площиною μ = 0.6. <span style="background-color: greenyellow; color: #007BFF">Відповідь отримайте в секундах до першого значущого числа після коми, та надайте її в мілі-секундах</span></legend>
+                <label><br><span style="background-color: greenyellow; color: #007BFF; font-weight: 1000">!!МІЛІСЕКУНДИ!!</span> <input type="number" name="task_03" maxlength="8" value=""></label>
+                <div id="textblock_03" style="background-color: gold; color: black"></div>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Питання 03. Задача. Тіло масою m, що знаходиться на вершині похилох площини, утримується силою тертя. За який час (t) тіло опуститься по похилій площині, якщо вона стане рухатись в горизонтальному напряму з прискорення = 1 м/с<sup>2</sup>. Довжина площини L = 1 м, кут нахилу до горизонту α = 30°, коефіціент тертя між тілом та площиною μ = 0.6. <span style="background-color: greenyellow; color: #007BFF">Відповідь отримайте в секундах до першого значущого числа після коми, та надайте її в мілі-секундах</span></legend>
+                <select size="2">
+                    <option name="task_06" value="1">800</option>
+                    <option name="task_06" value="2">0.8</option>
+                </select>
+                <div id="textblock_06" style="background-color: gold; color: black"></div>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Питання 04. Запишіть, яку форму прийме формула результуючих сил при рівноприскореному русі в Неінерціальній системі відліку, в які сила Інерції дорівнює нулю.</legend>
+                <label>
+                    <div id="textblock_04" style="background-color: gold; color: black"></div>
+                    <textarea name="task_04"></textarea>
+                </label>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Питання 05. Вкажіть, який саме знак (у вигляді символа) НЕ може прийняти векторне значення після приведення в скалярний вираз.</legend>
+                <label>
+                    <div id="textblock_05" style="background-color: gold; color: black"></div>
+                    <input type="text" name="task_05" maxlength="1"></input>
+                </label>
+            </fieldset>
+            <div style="text-align: center">
+                <input type="submit" value="Відправити">
+                <input type="reset" value="Скасувати">
+            </div>
+            <div id="point_textblock" style="background-color: gold; color: black"></div>
+        </form>
+    </section>
+</article>
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>Задачи</title>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
+    <style>
+        .vector
+        {
+            margin-left: -13px;
+        }
+        .vector:before
+        {
+            content: "→";
+            position: relative;
+            top: -11px;
+            left: 15px;
+        }
+        body
+        {
+            background-image: url('../assets/background.png');
+            background-repeat: repeat;
+            background-color: darkseagreen;
+        }
+
+        .task01link
+        {
+            color: greenyellow;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        .task01link:visited
+        {
+            color: pink;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        .task01link:hover
+        {
+            color: magenta;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        .task01link:active
+        {
+            color: yellow;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        .task02link
+        {
+            color: yellow;
+            background-color: darkgreen;
+            text-decoration: none;
+        }
+
+        .task02link:visited
+        {
+            color: orange;
+            background-color: azure;
+            text-decoration: none;
+        }
+
+        .task02link:hover
+        {
+            color: darkgreen;
+            background-color: yellow;
+            text-decoration: none;
+        }
+
+        .task02link:active
+        {
+            color: darkorange;
+            background-color: darkgreen;
+            text-decoration: underline;
+        }
+
+        .navLink:visited
+        {
+            color: mediumslateblue;
+            text-decoration: none;
+        }
+        .navLink
+        {
+            color: steelblue;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body style="padding-top: 50px">
+<script>
+    let navTable;
+
+    document.addEventListener("DOMContentLoaded", function()
+    {
+        navTable = document.getElementById("NAV_TABLE");
+        for (let index = 1; index <= 4; index++)
+        {
+            const hrefElement = document.getElementById("navUrl0" + index);
+            hrefElement.addEventListener("mouseover", () => onMouseHover(hrefElement));
+            hrefElement.addEventListener("mouseout", () => onMouseOut(hrefElement));
+        }
+    });
+
+    function onMouseHover(element)
+    {
+        element.style.backgroundColor = navTable.style.borderColor;
+    }
+
+    function onMouseOut(element)
+    {
+        element.style.backgroundColor = navTable.style.backgroundColor;
+    }
+</script>
+<header>
+    <nav style="
+            position: fixed;
+            top: 0;
+            width: 100%;
+            margin-bottom: 15px;
+            z-index: 1000;
+            font-family: 'Century Gothic', serif;
+        ">
+        <table id="NAV_TABLE" style="
+                font-size: 24px;
+                width: 98.8%;
+                border: 3px solid lightcyan;
+                background-color: skyblue;
+            ">
+            <tbody>
+            <tr>
+                <td style="width: 24.7%; max-width: 24.7%; text-align: center;">
+                    <a class="navLink" id="navUrl01" href="./page01.html">Головна сторінка</a>
+                </td>
+                <td style="width: 24.7%; max-width: 24.7%; text-align: center;">
+                    <a class="navLink" id="navUrl02" href="./page02.html">Сторінка з теоріює</a>
+                </td>
+                <td style="width: 24.7%; max-width: 24.7%; text-align: center;">
+                    <a class="navLink" id="navUrl03" href="./page03.html">Приклади розв'язання задач</a>
+                </td>
+                <td style="width: 24.7%; max-width: 24.7%; text-align: center;">
+                    <a class="navLink" id="navUrl04" href="./page04.html">Сторінка з контрольною роботою</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </nav>
+</header>
+<article id="header" style="text-align: center; background-color: aliceblue; font-family: 'Comic Sans MS', serif; font-size: 24px;">
+    <h2>Приклади розв'язування задач з теми</h2>
+    <h1><strong>"Неінерціальні системи відліку. Сила інерції"</strong></h1>
+</article>
+<article id="looker" style="font-size: 24px;">
+    <ol type="I">
+        <li><a class="task01link" href="#example01">Задача 01. Знайти час, за який тіло спуститься по похилій площині.</a></li>
+        <li><a class="task02link" href="#example02">Задача 02. Знайти прискорення точок осі цилінда.</a></li>
+    </ol>
+</article>
+
+<article id="example01">
+    <section style="font-size: 24px;">
+        <p style="text-align: left;" title="Умова задачи 01">
+            <span style="background-color: skyblue; color: mediumslateblue; font-family: 'Century Gothic', serif; font-weight: 700">Задача 01.</span>
+            Тіло масою m, що знаходиться на вершині похилох площини, утримується силою тертя. За який час тіло опуститься по похилій площині, якщо вона стане рухатись в горизонтальному напряму з прискорення = 1 м/с<sup>2</sup>. Довжина площини L = 1 м, кут нахилу до горизонту α = 30°, коефіціент тертя між тілом та площиною μ = 0.6.
+        </p>
+        <table style="border: 2px solid black">
+            <thead>
+                <tr>
+                    <th>Дано:</th>
+                    <th>Розв'язок:</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td style="width: 20%"></td>
+                <td rowspan="7" style="width: 40%; padding-left: 20px; border-left: 2px solid black; border-right: 2px solid black">
+                    <div><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>t</mi><mo>=</mo><msqrt><mfrac><mrow><mn>2</mn><mi>L</mi></mrow><mi>a</mi></mfrac></msqrt><mspace linebreak="newline"/></math></div>
+                    <div><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>m</mi><mi>g</mi><mo> </mo><mo>+</mo><mo> </mo><mi>N</mi><mo> </mo><mo>+</mo><mo> </mo><msub><mi>F</mi><mrow><mi>т</mi><mi>р</mi></mrow></msub><mo>+</mo><msub><mi>F</mi><mrow><mi>і</mi><mi>н</mi></mrow></msub><mo>=</mo><mi>m</mi><mi>a</mi></math></div>
+                    <div><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>m</mi><mi>g</mi><mo>*</mo><mi>sin</mi><mfenced><mi>α</mi></mfenced><mo>-</mo><msub><mi>F</mi><mrow><mi>т</mi><mi>р</mi></mrow></msub><mo>+</mo><mi>m</mi><msub><mi>a</mi><mn>0</mn></msub><mo>*</mo><mi>cos</mi><mfenced><mi>α</mi></mfenced><mo>=</mo><mi>m</mi><mi>a</mi></math></div>
+                    <div><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>-</mo><mi>m</mi><mi>g</mi><mo>*</mo><mi>cos</mi><mo>(</mo><mi>α</mi><mo>)</mo><mo>+</mo><mi>N</mi><mo>+</mo><mi>m</mi><msub><mi>a</mi><mn>0</mn></msub><mo>*</mo><mi>sin</mi><mo>(</mo><mi>α</mi><mo>)</mo><mo>=</mo><mn>0</mn></math></div>
+                    <div>F<sub>тр</sub> = μN</div>
+                    <div><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mi>g</mi><mo>*</mo><mi>sin</mi><mo>(</mo><mi>α</mi><mo>)</mo><mo>-</mo><mi>μ</mi><mo>*</mo><mi>g</mi><mo>*</mo><mi>cos</mi><mo>(</mo><mi>α</mi><mo>)</mo></math></div>
+                    <div><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>t</mi><mo>=</mo><msqrt><mfrac><mrow><mn>2</mn><mi>L</mi></mrow><mrow><mi>g</mi><mo>*</mo><mfenced><mrow><mi>sin</mi><mo>(</mo><mi>α</mi><mo>)</mo><mo> </mo><mo>-</mo><mo> </mo><mi>μ</mi><mo>*</mo><mi>cos</mi><mo>(</mo><mi>α</mi><mo>)</mo><mo>+</mo><msub><mi>a</mi><mn>0</mn></msub><mo>(</mo><mi>cos</mi><mo>(</mo><mi>α</mi><mo>)</mo><mo>+</mo><mi>μ</mi><mo>*</mo><mi>sin</mi><mo>(</mo><mi>α</mi><mo>)</mo><mo>)</mo></mrow></mfenced></mrow></mfrac></msqrt></math><br></div><br>
+                    <mark><strong>Відповідь: t = 0.8c</strong></mark>
+                </td>
+                <td rowspan="7" style="width: 40%; align-items: center">
+                    <figure style="text-align: center;">
+                        <img style="height: 40%; width: 40%;" src="../assets/examples/task_01.png" alt="Умовне зображення блока, на якому показано які сили на нього діють." title="Умовне зображення блока, на якому показано які сили на нього діють.">
+                        <figcaption>Рис 01. Умовне зображення блока, на якому показано які сили на нього діють.</figcaption>
+                    </figure>
+                </td>
+            </tr>
+                <tr>
+                    <td style="width: 20%; padding-left: 20px; padding-right: 20px;">
+                        m [кг]
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 20%; padding-left: 20px; padding-right: 20px;">
+                        a = 1 [м/с<sup>2</sup>]
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 20%; padding-left: 20px; padding-right: 20px;">
+                        L = 1 [м]
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 20%; padding-left: 20px; padding-right: 20px;">
+                        α = 30°
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 20%; padding-left: 20px; padding-right: 20px;">
+                        μ = 0.6
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 20%; padding-left: 20px; padding-right: 20px; border-top: 2px solid black;">
+                        Знайти - t
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot style="background-color: darkolivegreen">
+                <tr>
+                    <td colspan="3">
+                        <hr>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <table style="width: 40%; text-align: right; white-space: nowrap; float: right; margin-right: 20px; border: 2px solid gray">
+                            <tbody><tr><td style="text-align: center; width: 40%">
+                                <img style="text-align: center; height: 40%; width: 40%;" src="../assets/examples/task_01.png" alt="Умовне зображення блока, на якому показано які сили на нього діють." title="Умовне зображення блока, на якому показано які сили на нього діють.">
+                            </td></tr></tbody>
+                            <tfoot><tr><td style="text-align: center; width: 40%">
+                                Рис 01. Умовне зображення блока, на якому показано які сили на нього діють.
+                            </td></tr></tfoot>
+                        </table>
+                        <p style="text-align: justify; margin-left: 10px;">
+                            Виберемо систему відліку, пов’язану з похилою площиною.&nbsp;
+                            <ul>
+                                <li>Поки площина перебуває в стані спокою, на тіло діють три сили, які зрівноважують одна одну:</li>
+                                <ul>
+                                    <li>сила тяжіння mg</li>
+                                    <li>сила нормального тиску N</li>
+                                    <li>опори і сила тертя спокою F<sub>спок</sub></li>
+                                </ul>
+                                <li>Як тільки починається прискорений рух площини і «прив’язана»&nbsp;
+                                    до неї система відліку стане неінерціальною, з’явиться четверта сила, що діє не тіло:</li>
+                                <ol type="I">
+                                    <li>сила інерції F<sub>ін</sub> = -m*a<sub>0</sub></li>
+                                </ol>
+                                <li>Рівновага порушиться і тіло почне ковзати вниз по похилій площині з прискоренням.</li>
+                                <li>Оскільки шуканий час визначається відомою формулою шляху рівноприскореного руху без початкової швидкості, для якої потрібно знайти прискорення а:</li>
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>t</mi><mo>=</mo><msqrt><mfrac><mrow><mn>2</mn><mi>L</mi></mrow><mi>a</mi></mfrac></msqrt></math>
+                                <li>Для знаходження прискорення а - запишемо другий закон Ньютона в неінерціальній системі відліку:</li>
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>m</mi><mi>g</mi><mo> </mo><mo>+</mo><mo> </mo><mi>N</mi><mo> </mo><mo>+</mo><mo> </mo><msub><mi>F</mi><mrow><mi>т</mi><mi>р</mi></mrow></msub><mo>+</mo><msub><mi>F</mi><mrow><mi>і</mi><mi>н</mi></mrow></msub><mo>=</mo><mi>m</mi><mi>a</mi></math></li>
+                                <li>Виберемо осі проекцій, як показано на рисунку. Проектуючи всі вектори, що входять в до попереднього рівняння, на осі ОХ і ОY, одержимо відповідно два скалярних рівняння:</li>
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>m</mi><mi>g</mi><mo>*</mo><mi>sin</mi><mfenced><mi>α</mi></mfenced><mo>-</mo><msub><mi>F</mi><mrow><mi>т</mi><mi>р</mi></mrow></msub><mo>+</mo><mi>m</mi><msub><mi>a</mi><mn>0</mn></msub><mo>*</mo><mi>cos</mi><mfenced><mi>α</mi></mfenced><mo>=</mo><mi>m</mi><mi>a</mi></math>
+                                    <br>
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML"><mo>-</mo><mi>m</mi><mi>g</mi><mo>*</mo><mi>cos</mi><mo>(</mo><mi>α</mi><mo>)</mo><mo>+</mo><mi>N</mi><mo>+</mo><mi>m</mi><msub><mi>a</mi><mn>0</mn></msub><mo>*</mo><mi>sin</mi><mo>(</mo><mi>α</mi><mo>)</mo><mo>=</mo><mn>0</mn></math>
+                                <li>Розв'язавши системи вище, можемо знайти прискорення, врахувавши, що F<sub>тр</sub> = μN</li>
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mi>g</mi><mo>*</mo><mi>sin</mi><mo>(</mo><mi>α</mi><mo>)</mo><mo>-</mo><mi>μ</mi><mo>*</mo><mi>g</mi><mo>*</mo><mi>cos</mi><mo>(</mo><mi>α</mi><mo>)</mo></math>
+                                <li>
+                                    Врахувавши це, можна визначити швидкість за почаковою формулою. Підставляємо значенния а в формулу <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>t</mi><mo>=</mo><msqrt><mfrac><mrow><mn>2</mn><mi>L</mi></mrow><mi>a</mi></mfrac></msqrt></math>.
+                                </li>
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>t</mi><mo>=</mo><msqrt><mfrac><mrow><mn>2</mn><mi>L</mi></mrow><mrow><mi>g</mi><mo>*</mo><mfenced><mrow><mi>sin</mi><mo>(</mo><mi>α</mi><mo>)</mo><mo> </mo><mo>-</mo><mo> </mo><mi>μ</mi><mo>*</mo><mi>cos</mi><mo>(</mo><mi>α</mi><mo>)</mo><mo>+</mo><msub><mi>a</mi><mn>0</mn></msub><mo>(</mo><mi>cos</mi><mo>(</mo><mi>α</mi><mo>)</mo><mo>+</mo><mi>μ</mi><mo>*</mo><mi>sin</mi><mo>(</mo><mi>α</mi><mo>)</mo><mo>)</mo></mrow></mfenced></mrow></mfrac></msqrt></math>
+                        </ul>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+</article>
+
+<article id="example02">
+    <section style="font-size: 24px;">
+        <p style="text-align: left;" title="Умова задачи 02">
+            <span style="background-color: darkgreen; color: yellow; font-family: 'Century Gothic', serif; font-weight: 700">Задача 02.</span>
+            Однорідний круглий циліндр з намотаними на ньому двома тонкими нитками із закріпленими верхніми кінцями опускається вниз і обертається навколо своєї осі симетрії. Не враховуючи сил тертя, визначити прискорення точок, що лежать на осі циліндра.
+        </p>
+        <table style="border: 2px solid black">
+            <thead>
+            <tr>
+                <th>Дано:</th>
+                <th>Розв'язок:</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td style="width: 20%"></td>
+                <td rowspan="7" style="width: 40%; padding-left: 20px; border-left: 2px solid black; border-right: 2px solid black">
+                    <div>m * g - T - m * a = 0</div>
+                    <div>J * ε = R * T</div>
+                    <div>a = ε * R</div>
+                    <div><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>J</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>*</mo><mi>m</mi><mo>*</mo><msup><mi>R</mi><mn>2</mn></msup></math></div>
+                    <mark><strong>Відповідь: <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi><mo>=</mo><mfrac><mn>2</mn><mn>3</mn></mfrac><mo>*</mo><mi>g</mi></math></strong></mark>
+                </td>
+                <td rowspan="7" style="width: 40%; align-items: center">
+                    <figure style="text-align: center;">
+                        <img style="height: 40%; width: 40%;" src="../assets/examples/task_02.png" alt="Умовне зображення підвішаного циліндра, на якому показано які сили на нього діють." title="Умовне зображення підвішаного циліндра, на якому показано які сили на нього діють.">
+                        <figcaption>Рис 02. Умовне зображення підвішаного циліндра, на якому показано які сили на нього діють.</figcaption>
+                    </figure>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 20%; padding-left: 20px; padding-right: 20px;">
+                    T
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 20%; padding-left: 20px; padding-right: 20px;">
+                    m
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 20%; padding-left: 20px; padding-right: 20px;">
+                    J
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 20%; padding-left: 20px; padding-right: 20px;">
+                    ε
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 20%; padding-left: 20px; padding-right: 20px;">
+                    R
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 20%; padding-left: 20px; padding-right: 20px; border-top: 2px solid black;">
+                    Знайти - a
+                </td>
+            </tr>
+            </tbody>
+            <tfoot style="background-color: darkolivegreen">
+            <tr>
+                <td colspan="3">
+                    <hr>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <p style="text-align: justify; margin-left: 10px;">
+                        В неінерціальній системі координат X'О'У' до сил взаємодії та Т необхідно додати силу інерції - ma.&nbsp;
+                    <ul>
+                        <li>Рівняння руху в цьому випадку приймє наступну форму:</li>
+                        <ul>
+                            <li><div>m * g - T - m * a = 0</div></li>
+                            <li><div>J * ε = R * T</div></li>
+                            <li><div>a = ε * R</div></li>
+                        </ul>
+                        в якому:
+                        <ul>
+                            <li>m - вага циліндра;</li>
+                            <li>T - натяг двух ниток;</li>
+                            <li>J - момент інерції циліндра відносно його осі;</li>
+                            <li>ε - кутове прискорення;</li>
+                            <li>R - радіус цилінда;</li>
+                        </ul>
+                        <li>Врахувавши можливість розписати параметр J
+                            (
+                                <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>J</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>*</mo><mi>m</mi><mo>*</mo><msup><mi>R</mi><mn>2</mn></msup></math>
+                            ) результуючим рівнянням, як і відповіддю буде:
+                        <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi><mo>=</mo><mfrac><mn>2</mn><mn>3</mn></mfrac><mo>*</mo><mi>g</mi></math>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </section>
+</article>
+</body>
+</html>
